@@ -24,7 +24,7 @@ export const StyledHeader = styled.div`
   }
 
   .logo {
-    width: 120px;
+    width: 150px;
     margin-top: 7px;
   }
 
@@ -43,7 +43,7 @@ export const StyledHeader = styled.div`
   h2 {
     color: var(--gray-0);
     font-weight: 700;
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .input-search {
@@ -58,7 +58,7 @@ export const StyledHeader = styled.div`
   }
 
   input {
-    min-width: 160px;
+    min-width: 140px;
     width: 40%;
     margin: none;
     border: none;
@@ -101,7 +101,7 @@ export const StyledHeader = styled.div`
     }
 
     .logo {
-      width: 150px;
+      width: 170px;
     }
 
     .search {
@@ -116,6 +116,14 @@ export const StyledHeader = styled.div`
     .button-search {
       height: 30px;
       width: 32px;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 19px;
     }
   }
 `;

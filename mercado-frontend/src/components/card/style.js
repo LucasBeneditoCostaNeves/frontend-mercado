@@ -12,6 +12,7 @@ export const CardStyle = styled.li`
     width: 100px;
     display: flex;
     margin: 0px auto 10px;
+    cursor: pointer;
   }
 
   button {

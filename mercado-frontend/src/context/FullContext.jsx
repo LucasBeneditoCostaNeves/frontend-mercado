@@ -9,6 +9,7 @@ export const Context = createContext({});
 export const ProviderContext = ({ children }) => {
   const [number, setNumber] = useState(0);
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
   const [dataUser, setDataUser] = useState([]);
 
   async function getDataUser() {
@@ -41,7 +42,9 @@ export const ProviderContext = ({ children }) => {
   }, []);
 
   return (
-    <Context.Provider value={{ getDataUser, getProducts, products }}>
+    <Context.Provider
+      value={{ getDataUser, getProducts, products, setSearch, search }}
+    >
       {children}
     </Context.Provider>
   );

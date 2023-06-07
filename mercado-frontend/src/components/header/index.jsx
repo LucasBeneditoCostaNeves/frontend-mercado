@@ -1,19 +1,26 @@
 import { StyledHeader } from "./style";
 import club from "../../assents/clube.png";
-import profile from "../../assents/perfil.png";
+import input from "../../assents/lupa.png";
 import card from "../../assents/carrinho.png";
 import logo from "../../assents/logo.png";
 import onda from "../../assents/onda2.png";
 import { Input } from "../input";
+import { useContext } from "react";
+import { Context } from "../../context/FullContext";
 
 export const Header = () => {
+  const { setSearch, search } = useContext(Context);
+  const test = (event) => {
+    setSearch(event.target.value);
+    console.log(search);
+  };
+
   return (
     <>
       <StyledHeader>
         <div className="top-header">
           <img className="club" src={club} />
           <div className="div-images">
-            <img className="profile" src={profile} />
             <img className="card" src={card} />
           </div>
         </div>
@@ -23,8 +30,8 @@ export const Header = () => {
             <h1>CiberMarket</h1>
             <h2>na palma da sua mão</h2>
             <div className="flex">
-              <Input />
-              <button className="button-search">0</button>
+              <input onChange={test} />
+              <img className="button-search" src={input} />
             </div>
           </div>
         </div>
