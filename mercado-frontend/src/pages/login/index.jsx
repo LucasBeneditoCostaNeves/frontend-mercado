@@ -43,7 +43,7 @@ export const PageLogin = () => {
 
   const login = async (data) => {
     try {
-      const response = await api.post("login/", data);
+      const response = await api.post("auth/login", data);
       localStorage.setItem("@Token", response.data.token);
       toast.success("Login Concluído!");
       setTimeout(() => {

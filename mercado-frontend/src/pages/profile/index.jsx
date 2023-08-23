@@ -5,9 +5,19 @@ import { Header } from "../../components/header";
 import { List } from "../../components/list";
 import { Categories } from "../../components/categories";
 import { Card } from "../../components/card";
+import { FocusModal } from "../../components/focusModal";
+import { ToastContainer } from "react-toastify";
+import { FocusCart } from "../../components/focusCart";
 
 export const ProfilePage = () => {
-  const { getDataUser, search, products } = useContext(Context);
+  const {
+    getDataUser,
+    search,
+    products,
+    cart,
+    openFocusProduct,
+    focusProduct,
+  } = useContext(Context);
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,7 +28,6 @@ export const ProfilePage = () => {
   const searchValue = products.filter((element) =>
     element.name.includes(search)
   );
-  console.log(searchValue.lenght);
 
   return (
     <ProfileStyle>
@@ -48,6 +57,9 @@ export const ProfilePage = () => {
           <span>Tente pesquisar outra coisa 😎</span>
         </>
       )}
+      {openFocusProduct && focusProduct && <FocusModal />}
+      <FocusCart />
+      <ToastContainer />
     </ProfileStyle>
   );
 };

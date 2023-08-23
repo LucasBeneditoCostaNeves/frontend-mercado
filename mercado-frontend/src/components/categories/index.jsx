@@ -13,38 +13,29 @@ export const Categories = () => {
   }
   return (
     <CategoryStyle>
-      <div>
-        <img
-          onClick={() => rolarParaPosicao("Alimenticio")}
-          className="width150"
-          src={img1}
-          alt=""
-        />
-        {/* <span className="position-unique">Alimenticio</span> */}
+      <div className="special" onClick={() => rolarParaPosicao("Alimenticio")}>
+        <img className="width150" src={img1} alt="" />
+        <span className="position-unique special-span">Alimenticio</span>
       </div>
-      <div>
-        <img
-          onClick={() => rolarParaPosicao("Higiene Pessoal")}
-          src={img2}
-          alt="4"
-        />
-        {/* <span className="position-unique">Higiene Pessoal</span> */}
+      <div onClick={() => rolarParaPosicao("Higiene Pessoal")}>
+        <img src={img2} alt="4" />
+        <span className="position-unique">Higiene Pessoal</span>
       </div>
-      <div>
-        <img onClick={() => rolarParaPosicao("Limpeza")} src={img3} alt="7" />
-        {/* <span>Limpeza</span> */}
+      <div onClick={() => rolarParaPosicao("Limpeza")}>
+        <img src={img3} alt="7" />
+        <span>Limpeza</span>
       </div>
-      <div>
-        <img onClick={() => rolarParaPosicao("Frios")} src={img4} alt="" />
-        {/* <span>Frios</span> */}
+      <div onClick={() => rolarParaPosicao("Frios")}>
+        <img src={img4} alt="" />
+        <span>Frios</span>
       </div>
-      <div>
-        <img onClick={() => rolarParaPosicao("Bebidas")} src={img5} alt="" />
-        {/* <span>Bebidas</span> */}
+      <div onClick={() => rolarParaPosicao("Bebidas")}>
+        <img src={img5} alt="" />
+        <span>Bebidas</span>
       </div>
-      <div>
-        <img onClick={() => rolarParaPosicao("Hortifruti")} src={img6} alt="" />
-        {/* <span>HortiFruit</span> */}
+      <div onClick={() => rolarParaPosicao("Hortifruti")}>
+        <img src={img6} alt="" />
+        <span>HortiFruit</span>
       </div>
     </CategoryStyle>
   );

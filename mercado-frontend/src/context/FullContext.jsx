@@ -7,10 +7,13 @@ export const Context = createContext({});
 
 //Função que vai englobar nosso contexto
 export const ProviderContext = ({ children }) => {
-  const [number, setNumber] = useState(0);
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [dataUser, setDataUser] = useState([]);
+  const [focusProduct, setFocusProduct] = useState({});
+  const [openFocusProduct, setOpenFocusProduct] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [itens, setItem] = useState([]);
 
   async function getDataUser() {
     const token = localStorage.getItem("@Token");
@@ -21,7 +24,6 @@ export const ProviderContext = ({ children }) => {
         },
       });
       setDataUser(response.data);
-      console.log(response.data);
     } catch (error) {
       console.log(error.response);
     }
@@ -43,7 +45,21 @@ export const ProviderContext = ({ children }) => {
 
   return (
     <Context.Provider
-      value={{ getDataUser, getProducts, products, setSearch, search }}
+      value={{
+        getDataUser,
+        getProducts,
+        products,
+        setSearch,
+        search,
+        cart,
+        setCart,
+        focusProduct,
+        setFocusProduct,
+        openFocusProduct,
+        setOpenFocusProduct,
+        itens,
+        setItem,
+      }}
     >
       {children}
     </Context.Provider>
