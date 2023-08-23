@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { Context } from "../../context/FullContext";
 
 export const Header = () => {
-  const { setSearch, search } = useContext(Context);
+  const { setSearch, search, setFocusCart } = useContext(Context);
   const test = (event) => {
     setSearch(event.target.value);
     console.log(search);
@@ -21,7 +21,11 @@ export const Header = () => {
         <div className="top-header">
           <img className="club" src={club} />
           <div className="div-images">
-            <img className="card" src={card} />
+            <img
+              className="card"
+              src={card}
+              onClick={() => setFocusCart(true)}
+            />
           </div>
         </div>
         <div className="search">

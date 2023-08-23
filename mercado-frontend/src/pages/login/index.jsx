@@ -45,6 +45,7 @@ export const PageLogin = () => {
     try {
       const response = await api.post("auth/login", data);
       localStorage.setItem("@Token", response.data.token);
+      localStorage.setItem("@Id", response.data.user.id);
       toast.success("Login Concluído!");
       setTimeout(() => {
         navigate("/profile");

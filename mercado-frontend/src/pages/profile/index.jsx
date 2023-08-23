@@ -17,11 +17,15 @@ export const ProfilePage = () => {
     cart,
     openFocusProduct,
     focusProduct,
+    getCartUser,
+    focusCart,
+    setFocusCart,
   } = useContext(Context);
 
   useEffect(() => {
     setTimeout(() => {
       getDataUser();
+      getCartUser();
     }, 1000);
   }, []);
 
@@ -58,7 +62,7 @@ export const ProfilePage = () => {
         </>
       )}
       {openFocusProduct && focusProduct && <FocusModal />}
-      <FocusCart />
+      {focusCart && <FocusCart />}
       <ToastContainer />
     </ProfileStyle>
   );

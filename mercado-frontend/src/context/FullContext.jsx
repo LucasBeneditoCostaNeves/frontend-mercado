@@ -14,9 +14,11 @@ export const ProviderContext = ({ children }) => {
   const [openFocusProduct, setOpenFocusProduct] = useState(false);
   const [cart, setCart] = useState([]);
   const [itens, setItem] = useState([]);
+  const [focusCart, setFocusCart] = useState(false);
+  const token = localStorage.getItem("@Token");
+  const id = localStorage.getItem("@Id");
 
   async function getDataUser() {
-    const token = localStorage.getItem("@Token");
     try {
       const response = await api.get("users/", {
         headers: {
@@ -33,7 +35,21 @@ export const ProviderContext = ({ children }) => {
     try {
       const response = await api.get("products/");
       setProducts(response.data);
-      console.log(response.data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  }
+
+  async function getCartUser() {
+    try {
+      const response = await api.get("users/cart", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = response.data;
+      const filter = data.filter((index) => index.user_id == id);
+      setCart(filter);
     } catch (error) {
       console.log(error.response);
     }
@@ -59,6 +75,9 @@ export const ProviderContext = ({ children }) => {
         setOpenFocusProduct,
         itens,
         setItem,
+        getCartUser,
+        focusCart,
+        setFocusCart,
       }}
     >
       {children}
