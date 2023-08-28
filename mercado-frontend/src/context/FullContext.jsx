@@ -17,6 +17,7 @@ export const ProviderContext = ({ children }) => {
   const [focusCart, setFocusCart] = useState(false);
   const token = localStorage.getItem("@Token");
   const id = localStorage.getItem("@Id");
+  const [typePassword, setTypePassword] = useState("password");
 
   async function getDataUser() {
     try {
@@ -78,6 +79,8 @@ export const ProviderContext = ({ children }) => {
         getCartUser,
         focusCart,
         setFocusCart,
+        typePassword,
+        setTypePassword,
       }}
     >
       {children}

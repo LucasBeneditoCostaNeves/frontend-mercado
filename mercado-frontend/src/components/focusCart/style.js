@@ -49,10 +49,22 @@ export const DivStyled = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .text-null-2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 20px;
   }
 
   .confirm {
-    width: 300px;
+    width: 97%;
+    max-width: 300px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -64,5 +76,15 @@ export const DivStyled = styled.div`
     color: var(--gray-10);
     font-weight: 600;
     font-size: 16px;
+  }
+
+  .display-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    max-width: 300px;
+    margin: 15px auto;
+    font-size: 18px;
+    font-weight: 600;
   }
 `;

@@ -13,10 +13,21 @@ export const DivStyled = styled.div`
 
   h2 {
     width: 185px;
+    display: -webkit-box;
+
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
   }
 
   h3 {
+    margin-top: 8px;
     font-size: 17px;
+    font-weight: 600;
   }
 
   button {

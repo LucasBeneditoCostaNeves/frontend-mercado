@@ -39,12 +39,14 @@ export const ProfilePage = () => {
       {search == "" && (
         <>
           <Categories />
-          <List title="🍔 Alimenticio" category="Alimenticio" />
-          <List title="🍹 Bebidas" category="Bebidas" />
-          <List title="🧼 Limpeza" category="Limpeza" />
-          <List title="🧽 Higiene Pessoal" category="Higiene Pessoal" />
-          <List title="🍖 Frios" category="Frios" />
-          <List title="🥕 Hortifruit" category="Hortifruti" />
+          <div className="teste">
+            <List title="🍔 Alimenticio" category="Alimenticio" />
+            <List title="🍹 Bebidas" category="Bebidas" />
+            <List title="🧼 Limpeza" category="Limpeza" />
+            <List title="🧽 Higiene Pessoal" category="Higiene Pessoal" />
+            <List title="🍖 Frios" category="Frios" />
+            <List title="🥕 Hortifruit" category="Hortifruti" />
+          </div>
         </>
       )}
       {search !== "" && (

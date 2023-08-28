@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const LoginStyled = styled.div`
   img {
     display: flex;
-    margin: 12px auto;
+    margin: 35px auto 12px;
     width: 190px;
   }
 
   form {
     background-color: var(--gray-9);
-    width: 62%;
+    width: 70%;
     max-width: 215px;
     margin: 0 auto;
     padding: 20px 35px;
@@ -62,6 +62,7 @@ export const LoginStyled = styled.div`
     border-radius: 8px;
     margin-top: 20px;
     font-size: 16px;
+    font-weight: 600;
   }
 
   a {

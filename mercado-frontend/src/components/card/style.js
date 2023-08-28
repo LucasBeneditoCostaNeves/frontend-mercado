@@ -9,6 +9,7 @@ export const CardStyle = styled.li`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   position: relative;
+
   img {
     width: 100px;
     display: flex;
@@ -24,6 +25,7 @@ export const CardStyle = styled.li`
     margin: 0 auto;
     display: flex;
     color: var(--gray-9);
+    cursor: pointer;
   }
 
   h3 {
@@ -34,6 +36,11 @@ export const CardStyle = styled.li`
     margin: 0 auto 10px;
     font-weight: 600;
     color: var(--gray-0);
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   h5 {
@@ -41,16 +48,5 @@ export const CardStyle = styled.li`
     font-size: 17px;
     font-weight: 700;
     color: var(--gray-0);
-  }
-
-  .i {
-    font-size: 16px;
-    background: rgba(0, 189, 19, 0.75);
-    width: max-content;
-    padding: 2px 9px;
-    border-radius: 40px;
-    color: white;
-    position: absolute;
-    cursor: pointer;
   }
 `;

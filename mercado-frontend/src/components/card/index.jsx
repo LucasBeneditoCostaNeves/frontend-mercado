@@ -6,7 +6,6 @@ export const Card = (data) => {
   const { setFocusProduct, setOpenFocusProduct } = useContext(Context);
   return (
     <CardStyle>
-      <h3 className="i">i</h3>
       <img src={data.image} />
       <h3>{data.name}</h3>
       <h5>R$ {data.price}</h5>

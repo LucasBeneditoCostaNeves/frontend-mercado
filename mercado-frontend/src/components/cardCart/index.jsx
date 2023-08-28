@@ -31,7 +31,7 @@ export const CardCart = (element) => {
       <img src={element.image} />
       <div className="text">
         <h2>{element.name}</h2>
-        <h3>{numberItem}</h3>
+        <h3>Unidades: {numberItem}</h3>
         <button onClick={() => deleteCard(element.name)}>Remover</button>
       </div>
     </DivStyled>

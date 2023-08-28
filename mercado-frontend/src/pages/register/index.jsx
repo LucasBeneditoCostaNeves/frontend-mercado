@@ -48,7 +48,6 @@ export const RegisterPage = () => {
       email: data.email,
       password: data.password,
       name: data.name,
-      image: data.image,
     };
     console.log(newData);
     try {
@@ -86,17 +85,10 @@ export const RegisterPage = () => {
         />
         <Input
           label="Senha"
-          type="text"
+          type="password"
           placeholder="Coloque sua senha aqui"
           register={register("password")}
           msgerror={errors.password?.message}
-        />
-        <Input
-          label="Imagem"
-          type="text"
-          placeholder="Coloque seu telefone aqui"
-          register={register("image")}
-          msgerror={errors.image?.message}
         />
         <button className="button" type="submit">
           Cadastre-se

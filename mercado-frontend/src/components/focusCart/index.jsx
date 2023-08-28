@@ -15,7 +15,17 @@ export const FocusCart = () => {
       arraySemRepeticao.push(item);
     }
   }
-  console.log(arraySemRepeticao);
+
+  const prices = cart.map((element) => Number(element.price));
+  console.log(prices);
+
+  let novoReduce = prices.reduce((acumulador, valorAtual) => {
+    return acumulador + valorAtual;
+  }, 0);
+
+  let ultimosCinco = novoReduce.toFixed(2);
+
+  console.log(novoReduce);
 
   return (
     <DivStyled>
@@ -30,18 +40,22 @@ export const FocusCart = () => {
           arraySemRepeticao && (
             <>
               {arraySemRepeticao.map((element) => CardCart(element))}
+              <div className="display-flex">
+                <h4 className="h4-total">Total:</h4>
+                <h6>R${ultimosCinco}</h6>
+              </div>
               <button
                 className="confirm"
                 onClick={() => toast.warning("Estamos em Manutenção 👷‍♂️")}
               >
-                buttons
+                Confirmar
               </button>
             </>
           )
         ) : (
           <>
             <h2 className="text-null">Seu Carrinho está Vazio :/</h2>
-            <h3>Que tal adicionar novos items?</h3>
+            <h3 className="text-null-2">Que tal adicionar novos items?</h3>
           </>
         )}
       </div>

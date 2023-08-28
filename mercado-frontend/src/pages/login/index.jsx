@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -9,6 +9,7 @@ import { api } from "../../service";
 import { Input } from "../../components/input";
 import { LoginStyled } from "./style";
 import logo from "../../assents/logoRegister.png";
+import { Context } from "../../context/FullContext";
 
 const loginSchema = yup.object().shape({
   email: yup
@@ -25,6 +26,8 @@ const loginSchema = yup.object().shape({
 
 export const PageLogin = () => {
   const htmlElement = document.querySelector("html");
+  const { typePassword, setTypePassword } = useContext(Context);
+
   htmlElement.classList.add("yellow");
   const {
     register,
@@ -35,7 +38,7 @@ export const PageLogin = () => {
     mode: "onBlur",
     resolver: yupResolver(loginSchema),
   });
-  //   const { autoLogin } = useContext(CreateContextGenerico);
+
   const navigate = useNavigate();
   //   useEffect(() => {
   //     autoLogin();
@@ -68,13 +71,15 @@ export const PageLogin = () => {
           placeholder="Coloque seu email aqui"
           register={register("email")}
           msgerror={errors.email?.message}
+          image={false}
         />
         <Input
           label="Password"
-          type="text"
+          type={typePassword}
           placeholder="Coloque seu email aqui"
           register={register("password")}
           msgerror={errors.password?.message}
+          image={true}
         />
         <button className="button" type="submit">
           Continuar
