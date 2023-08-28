@@ -5,7 +5,7 @@ import { api } from "../../service";
 import { toast } from "react-toastify";
 
 export const FocusModal = () => {
-  const { focusProduct, setOpenFocusProduct, itens, setItem } =
+  const { focusProduct, setOpenFocusProduct, itens, setItem, getCartUser } =
     useContext(Context);
   const [number, setNumber] = useState(1);
 
@@ -19,6 +19,7 @@ export const FocusModal = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+        getCartUser();
       }
 
       toast.success("Item Adicionado no Carrinho");

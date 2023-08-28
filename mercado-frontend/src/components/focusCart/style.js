@@ -12,7 +12,7 @@ export const DivStyled = styled.div`
   .white {
     background-color: white;
     width: 60%;
-    height: 80%;
+    max-height: 80%;
     min-width: 280px;
     max-width: 410px;
     margin: 0 auto;
@@ -43,5 +43,26 @@ export const DivStyled = styled.div`
       color: var(--gray-10);
       font-weight: 700;
     }
+  }
+
+  .text-null {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .confirm {
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--green-0);
+    color: var(--gray-10);
+    font-weight: 600;
+    font-size: 16px;
   }
 `;

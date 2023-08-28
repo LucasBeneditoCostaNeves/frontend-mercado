@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Context } from "../../context/FullContext";
 import { DivStyled } from "./style";
 import { CardCart } from "../cardCart";
+import { toast } from "react-toastify";
 
 export const FocusCart = () => {
   const { cart, setFocusCart } = useContext(Context);
@@ -25,8 +26,24 @@ export const FocusCart = () => {
             X
           </span>
         </div>
-        {arraySemRepeticao &&
-          arraySemRepeticao.map((element) => CardCart(element))}
+        {arraySemRepeticao.length > 0 ? (
+          arraySemRepeticao && (
+            <>
+              {arraySemRepeticao.map((element) => CardCart(element))}
+              <button
+                className="confirm"
+                onClick={() => toast.warning("Estamos em Manutenção 👷‍♂️")}
+              >
+                buttons
+              </button>
+            </>
+          )
+        ) : (
+          <>
+            <h2 className="text-null">Seu Carrinho está Vazio :/</h2>
+            <h3>Que tal adicionar novos items?</h3>
+          </>
+        )}
       </div>
     </DivStyled>
   );
